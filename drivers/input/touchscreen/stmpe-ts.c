@@ -139,7 +139,10 @@ static void calibration_pointer(int *x_orig, int *y_orig)
        /*IWG15: TOUCH:( 100 / 93 )  is the scalling factor*/
         y = ( *x_orig - STMPE_MIN_Y) * 100 / 93;
         *y_orig = y;
-        *x_orig = x * 106 / 100 - 80;
+
+		// Calibration: getevent -l /dev/input/event0 | grep ABS_X
+        //*x_orig = x * 106 / 100 - 80; // Horizontal calibration LDVS LDB 800x600
+        *x_orig = x * 98 / 100 - 101; // Horizontal calibration LDVS LDB 800x480 
 }
 #endif
 #ifdef CONFIG_IWG15M_SM
