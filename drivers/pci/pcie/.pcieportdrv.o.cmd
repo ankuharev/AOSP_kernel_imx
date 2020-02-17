@@ -1,0 +1,1 @@
+cmd_drivers/pci/pcie/pcieportdrv.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/pci/pcie/pcieportdrv.o drivers/pci/pcie/portdrv_core.o drivers/pci/pcie/portdrv_pci.o drivers/pci/pcie/portdrv_bus.o 

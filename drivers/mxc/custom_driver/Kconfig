@@ -1,0 +1,32 @@
+#
+# Custom Driver's menu configuration
+#
+menu "Custom driver"
+
+config MXC_CUSTOM_DRIVER
+	  tristate "Support for MXC custom driver"
+#	  depends on MACH_MX6_IWG15M_Q7
+	  select MXC_LED_DRIVER
+	  select MXC_DIPSW_DRIVER
+	  ---help---
+	  The HDMI CEC device implement low level protocol on i.MX6x platforms.
+
+config MXC_LED_DRIVER
+       tristate "Status LED's driver"
+       depends on MXC_CUSTOM_DRIVER
+       default y
+       ---help---
+       This is the LED driver module. This module provides kernel API to
+       on/off 4 LED's.
+       If you want LED driver support, you should say Y here
+
+config MXC_DIPSW_DRIVER
+       tristate "DIP Switch driver"
+       depends on MXC_CUSTOM_DRIVER
+       default y
+       ---help---
+       This is the DIP Switch driver module. This module provides kernel API to
+       read the position of 4 DIP Switches.
+       If you want DIP Switch driver support, you should say Y here
+
+endmenu

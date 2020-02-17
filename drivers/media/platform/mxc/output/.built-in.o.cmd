@@ -1,0 +1,1 @@
+cmd_drivers/media/platform/mxc/output/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/media/platform/mxc/output/built-in.o drivers/media/platform/mxc/output/mxc_vout.o drivers/media/platform/mxc/output/mxc_pxp_v4l2.o 

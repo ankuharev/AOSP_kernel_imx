@@ -1,0 +1,1 @@
+cmd_arch/arm/mach-imx/devices/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o arch/arm/mach-imx/devices/built-in.o arch/arm/mach-imx/devices/devices.o arch/arm/mach-imx/devices/platform-gpio-mxc.o arch/arm/mach-imx/devices/platform-imx-dma.o 

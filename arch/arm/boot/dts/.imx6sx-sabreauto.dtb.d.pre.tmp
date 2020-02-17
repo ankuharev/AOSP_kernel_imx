@@ -1,0 +1,5 @@
+imx6sx-sabreauto.o: arch/arm/boot/dts/imx6sx-sabreauto.dts \
+ arch/arm/boot/dts/imx6sx.dtsi \
+ /home/osboxes/AOSP/kernel_imx/arch/arm/boot/dts/include/dt-bindings/clock/imx6sx-clock.h \
+ /home/osboxes/AOSP/kernel_imx/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h \
+ arch/arm/boot/dts/imx6sx-pinfunc.h arch/arm/boot/dts/skeleton.dtsi

@@ -1,0 +1,1 @@
+cmd_drivers/mxc/custom_driver/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/mxc/custom_driver/built-in.o drivers/mxc/custom_driver/led.o drivers/mxc/custom_driver/dip-sw.o 

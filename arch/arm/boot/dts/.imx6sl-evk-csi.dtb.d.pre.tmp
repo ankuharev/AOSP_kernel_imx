@@ -1,0 +1,5 @@
+imx6sl-evk-csi.o: arch/arm/boot/dts/imx6sl-evk-csi.dts \
+ arch/arm/boot/dts/imx6sl-evk.dts arch/arm/boot/dts/imx6sl.dtsi \
+ arch/arm/boot/dts/skeleton.dtsi arch/arm/boot/dts/imx6sl-pinfunc.h \
+ /home/osboxes/AOSP/kernel_imx/arch/arm/boot/dts/include/dt-bindings/clock/imx6sl-clock.h \
+ arch/arm/boot/dts/imx6sl-evk-common.dtsi

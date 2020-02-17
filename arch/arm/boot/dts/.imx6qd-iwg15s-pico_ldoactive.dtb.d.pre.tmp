@@ -1,0 +1,6 @@
+imx6qd-iwg15s-pico_ldoactive.o: \
+ arch/arm/boot/dts/imx6qd-iwg15s-pico_ldoactive.dts \
+ arch/arm/boot/dts/imx6q_iwg15.dtsi arch/arm/boot/dts/imx6q-pinfunc.h \
+ arch/arm/boot/dts/imx6qdl_iwg15.dtsi arch/arm/boot/dts/skeleton.dtsi \
+ /home/osboxes/AOSP/kernel_imx/arch/arm/boot/dts/include/dt-bindings/gpio/gpio.h \
+ arch/arm/boot/dts/imx6qdl-iwg15s-pico.dtsi
