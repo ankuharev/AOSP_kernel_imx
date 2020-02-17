@@ -142,7 +142,7 @@ static void calibration_pointer(int *x_orig, int *y_orig)
 
 		// Calibration: getevent -l /dev/input/event0 | grep ABS_X
         //*x_orig = x * 106 / 100 - 80; // Horizontal calibration LDVS LDB 800x600
-        *x_orig = x * 98 / 100 - 101; // Horizontal calibration LDVS LDB 800x480 
+        *x_orig = x * 102 / 100 - 101; // Horizontal calibration LDVS LDB 800x480 
 }
 #endif
 #ifdef CONFIG_IWG15M_SM
