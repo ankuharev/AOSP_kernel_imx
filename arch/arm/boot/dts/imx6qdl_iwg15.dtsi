@@ -672,6 +672,14 @@
 				};
 			};
 
+			snvs-pwrkey@0x020cc000 {
+				compatible = "fsl,imx6sx-snvs-pwrkey";
+				reg = <0x020cc000 0x4000>;
+				interrupts = <0 4 0x4>;
+				fsl,keycode = <116>; /* KEY_POWER */
+				fsl,wakeup;
+			};
+
 			epit1: epit@020d0000 { /* EPIT1 */
 				compatible = "fsl,imx6q-epit";
 				reg = <0x020d0000 0x4000>;
