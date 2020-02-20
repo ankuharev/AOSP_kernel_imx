@@ -135,6 +135,26 @@
 		status = "okay";
 	};
 
+	gpio-keys {
+		compatible = "gpio-keys";
+		/* Reconfig to power key in Android*/
+		power {
+			label = "Power Button";
+			gpios = <&gpio4 30 1>;
+			linux,code = <116>; /* KEY_POWER */
+			gpio-key,wakeup;
+			//debounce-interval = <1>;
+		};
+
+		button@1 {
+			label = "wakeup";
+			linux,code = <0x100>;
+			gpios = <&gpio4 29 0x4>;
+			debounce-interval = <20>;
+			gpio-key,wakeup = <1>;
+		};
+	};
+
 	iwg15_backlight {
 		compatible = "iwave,iwg15-backlight";
 		backlgt-gpios = <&gpio2 5 1>;
