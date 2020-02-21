@@ -51,7 +51,8 @@
 		&gpio4 5 0   &gpio4 6 0   &gpio4 7 0   &gpio4 8 0
 		&gpio4 9 0   &gpio4 10 0  &gpio4 16 0  &gpio4 17 0
 		&gpio4 18 0  &gpio4 19 0  &gpio4 20 0  &gpio4 22 0
-		&gpio4 28 0  &gpio4 29 0  &gpio4 30 0  &gpio4 31 0
+		//&gpio4 28 0  &gpio4 29 0  &gpio4 30 0  &gpio4 31 0
+		&gpio4 28 0  &gpio4 31 0
 		&gpio5 0  0  &gpio5 8 0   &gpio5 9 0   &gpio5 10 0
 		&gpio5 11 0  &gpio5 16 0  &gpio5 17 0  &gpio5 18 0  
 		&gpio5 19 0  &gpio5 20 0  &gpio5 21 0  &gpio5 22 0
