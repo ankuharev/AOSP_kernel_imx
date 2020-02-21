@@ -1,1 +1,1 @@
-cmd_drivers/media/platform/mxc/capture/mxc_vadc_tvin.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/media/platform/mxc/capture/mxc_vadc_tvin.o drivers/media/platform/mxc/capture/mxc_vadc.o 
+cmd_drivers/media/platform/mxc/capture/mxc_vadc_tvin.o := arm-eabi-ld -EL    -r -o drivers/media/platform/mxc/capture/mxc_vadc_tvin.o drivers/media/platform/mxc/capture/mxc_vadc.o 

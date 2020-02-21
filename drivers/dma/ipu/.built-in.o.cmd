@@ -1,1 +1,1 @@
-cmd_drivers/dma/ipu/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/dma/ipu/built-in.o drivers/dma/ipu/ipu_irq.o drivers/dma/ipu/ipu_idmac.o 
+cmd_drivers/dma/ipu/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/dma/ipu/built-in.o drivers/dma/ipu/ipu_irq.o drivers/dma/ipu/ipu_idmac.o 

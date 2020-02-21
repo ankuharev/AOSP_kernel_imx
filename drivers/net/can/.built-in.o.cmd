@@ -1,1 +1,1 @@
-cmd_drivers/net/can/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/net/can/built-in.o drivers/net/can/can-dev.o drivers/net/can/usb/built-in.o drivers/net/can/softing/built-in.o drivers/net/can/m_can.o drivers/net/can/flexcan.o 
+cmd_drivers/net/can/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/net/can/built-in.o drivers/net/can/can-dev.o drivers/net/can/usb/built-in.o drivers/net/can/softing/built-in.o drivers/net/can/m_can.o drivers/net/can/flexcan.o 

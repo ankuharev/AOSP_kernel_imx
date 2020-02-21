@@ -1,4 +1,4 @@
-cmd_fs/aio.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-gcc -Wp,-MD,fs/.aio.o.d  -nostdinc -isystem /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include -I/home/osboxes/AOSP/kernel_imx/arch/arm/include -Iarch/arm/include/generated  -Iinclude -I/home/osboxes/AOSP/kernel_imx/arch/arm/include/uapi -Iarch/arm/include/generated/uapi -I/home/osboxes/AOSP/kernel_imx/include/uapi -Iinclude/generated/uapi -include /home/osboxes/AOSP/kernel_imx/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -fno-dwarf2-cfi-asm -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fomit-frame-pointer -fno-var-tracking-assignments -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(aio)"  -D"KBUILD_MODNAME=KBUILD_STR(aio)" -c -o fs/.tmp_aio.o fs/aio.c
+cmd_fs/aio.o := arm-eabi-gcc -Wp,-MD,fs/.aio.o.d  -nostdinc -isystem /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/bin/../lib/gcc/arm-eabi/4.8/include -I/home/osboxes/AOSP/kernel_imx/arch/arm/include -Iarch/arm/include/generated  -Iinclude -I/home/osboxes/AOSP/kernel_imx/arch/arm/include/uapi -Iarch/arm/include/generated/uapi -I/home/osboxes/AOSP/kernel_imx/include/uapi -Iinclude/generated/uapi -include /home/osboxes/AOSP/kernel_imx/include/linux/kconfig.h -D__KERNEL__ -mlittle-endian -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -fno-delete-null-pointer-checks -O2 -fno-dwarf2-cfi-asm -mabi=aapcs-linux -mno-thumb-interwork -funwind-tables -marm -D__LINUX_ARM_ARCH__=7 -march=armv7-a -msoft-float -Uarm -Wframe-larger-than=1024 -fno-stack-protector -Wno-unused-but-set-variable -fomit-frame-pointer -fno-var-tracking-assignments -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -DCC_HAVE_ASM_GOTO    -D"KBUILD_STR(s)=\#s" -D"KBUILD_BASENAME=KBUILD_STR(aio)"  -D"KBUILD_MODNAME=KBUILD_STR(aio)" -c -o fs/.tmp_aio.o fs/aio.c
 
 source_fs/aio.o := fs/aio.c
 
@@ -12,7 +12,7 @@ deps_fs/aio.o := \
     $(wildcard include/config/ring/buffer.h) \
     $(wildcard include/config/tracing.h) \
     $(wildcard include/config/ftrace/mcount/record.h) \
-  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/../lib/gcc/arm-eabi/4.6.x-google/include/stdarg.h \
+  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.8/lib/gcc/arm-eabi/4.8/include/stdarg.h \
   include/linux/linkage.h \
   include/linux/compiler.h \
     $(wildcard include/config/sparse/rcu/pointer.h) \

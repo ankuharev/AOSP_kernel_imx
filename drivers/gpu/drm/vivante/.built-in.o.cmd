@@ -1,1 +1,1 @@
-cmd_drivers/gpu/drm/vivante/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/gpu/drm/vivante/built-in.o drivers/gpu/drm/vivante/vivante.o 
+cmd_drivers/gpu/drm/vivante/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/gpu/drm/vivante/built-in.o drivers/gpu/drm/vivante/vivante.o 

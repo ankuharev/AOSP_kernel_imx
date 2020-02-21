@@ -1,5 +1,4 @@
 # 1 "arch/arm/boot/dts/imx6dls-iwg15s-pico_ldobypass.dts"
-# 1 "<built-in>"
 # 1 "<command-line>"
 # 1 "arch/arm/boot/dts/imx6dls-iwg15s-pico_ldobypass.dts"
 # 12 "arch/arm/boot/dts/imx6dls-iwg15s-pico_ldobypass.dts"
@@ -687,6 +686,14 @@
      reg = <0x34 0x58>;
      interrupts = <0 19 0x04 0 20 0x04>;
     };
+   };
+
+   snvs-pwrkey@0x020cc000 {
+    compatible = "fsl,imx6sx-snvs-pwrkey";
+    reg = <0x020cc000 0x4000>;
+    interrupts = <0 4 0x4>;
+    fsl,keycode = <116>;
+    fsl,wakeup;
    };
 
    epit1: epit@020d0000 {
@@ -2531,6 +2538,26 @@
   status = "okay";
  };
 
+ gpio-keys {
+  compatible = "gpio-keys";
+
+  power {
+   label = "Power Button";
+   gpios = <&gpio4 30 1>;
+   linux,code = <116>;
+   gpio-key,wakeup;
+
+  };
+
+  button@1 {
+   label = "wakeup";
+   linux,code = <0x100>;
+   gpios = <&gpio4 29 0x4>;
+   debounce-interval = <20>;
+   gpio-key,wakeup = <1>;
+  };
+ };
+
  iwg15_backlight {
   compatible = "iwave,iwg15-backlight";
   backlgt-gpios = <&gpio2 5 1>;
@@ -2741,16 +2768,20 @@
  };
 };
 
+
 &ldb {
  status = "okay";
 
- lvds-channel@0 {
+ lvds-channel@1 {
   fsl,data-mapping = "spwg";
   fsl,data-width = <18>;
-  primary;
 
-                crtc = "ipu1-di0";
-  status = "okay";
+
+
+
+
+  crtc = "ipu2-di1";
+  status = "disabled";
 
   display-timings {
    native-mode = <&timing1>;
@@ -2768,13 +2799,16 @@
   };
  };
 
- lvds-channel@1 {
+ lvds-channel@0 {
   fsl,data-mapping = "spwg";
   fsl,data-width = <18>;
 
 
-                crtc = "ipu2-di1";
-  status = "disabled";
+
+
+  primary;
+  crtc = "ipu1-di0";
+  status = "okay";
 
   display-timings {
    native-mode = <&timing0>;

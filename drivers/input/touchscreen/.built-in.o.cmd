@@ -1,1 +1,1 @@
-cmd_drivers/input/touchscreen/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/input/touchscreen/built-in.o drivers/input/touchscreen/stmpe-ts.o 
+cmd_drivers/input/touchscreen/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/input/touchscreen/built-in.o drivers/input/touchscreen/stmpe-ts.o 

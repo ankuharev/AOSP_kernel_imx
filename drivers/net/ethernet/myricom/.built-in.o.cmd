@@ -1,1 +1,1 @@
-cmd_drivers/net/ethernet/myricom/built-in.o :=  rm -f drivers/net/ethernet/myricom/built-in.o; /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ar rcsD drivers/net/ethernet/myricom/built-in.o
+cmd_drivers/net/ethernet/myricom/built-in.o :=  rm -f drivers/net/ethernet/myricom/built-in.o; arm-eabi-ar rcsD drivers/net/ethernet/myricom/built-in.o
