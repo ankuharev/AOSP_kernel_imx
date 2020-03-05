@@ -1,1 +1,1 @@
-cmd_drivers/pci/pcie/aer/aerdriver.o := arm-eabi-ld -EL    -r -o drivers/pci/pcie/aer/aerdriver.o drivers/pci/pcie/aer/aerdrv_errprint.o drivers/pci/pcie/aer/aerdrv_core.o drivers/pci/pcie/aer/aerdrv.o 
+cmd_drivers/pci/pcie/aer/aerdriver.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/pci/pcie/aer/aerdriver.o drivers/pci/pcie/aer/aerdrv_errprint.o drivers/pci/pcie/aer/aerdrv_core.o drivers/pci/pcie/aer/aerdrv.o 

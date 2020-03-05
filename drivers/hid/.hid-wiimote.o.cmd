@@ -1,1 +1,1 @@
-cmd_drivers/hid/hid-wiimote.o := arm-eabi-ld -EL    -r -o drivers/hid/hid-wiimote.o drivers/hid/hid-wiimote-core.o drivers/hid/hid-wiimote-ext.o drivers/hid/hid-wiimote-debug.o 
+cmd_drivers/hid/hid-wiimote.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/hid/hid-wiimote.o drivers/hid/hid-wiimote-core.o drivers/hid/hid-wiimote-ext.o drivers/hid/hid-wiimote-debug.o 

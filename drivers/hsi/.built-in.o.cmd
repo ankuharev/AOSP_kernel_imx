@@ -1,1 +1,1 @@
-cmd_drivers/hsi/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/hsi/built-in.o drivers/hsi/clients/built-in.o 
+cmd_drivers/hsi/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/hsi/built-in.o drivers/hsi/clients/built-in.o 

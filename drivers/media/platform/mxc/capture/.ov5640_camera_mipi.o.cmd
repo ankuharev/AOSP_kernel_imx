@@ -1,1 +1,1 @@
-cmd_drivers/media/platform/mxc/capture/ov5640_camera_mipi.o := arm-eabi-ld -EL    -r -o drivers/media/platform/mxc/capture/ov5640_camera_mipi.o drivers/media/platform/mxc/capture/ov5640_mipi.o 
+cmd_drivers/media/platform/mxc/capture/ov5640_camera_mipi.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/media/platform/mxc/capture/ov5640_camera_mipi.o drivers/media/platform/mxc/capture/ov5640_mipi.o 

@@ -1,1 +1,1 @@
-cmd_drivers/staging/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/staging/built-in.o drivers/staging/staging.o drivers/staging/media/built-in.o drivers/staging/iio/built-in.o drivers/staging/android/built-in.o drivers/staging/silicom/built-in.o 
+cmd_drivers/staging/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/staging/built-in.o drivers/staging/staging.o drivers/staging/media/built-in.o drivers/staging/iio/built-in.o drivers/staging/android/built-in.o drivers/staging/silicom/built-in.o 

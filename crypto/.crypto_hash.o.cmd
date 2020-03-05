@@ -1,1 +1,1 @@
-cmd_crypto/crypto_hash.o := arm-eabi-ld -EL    -r -o crypto/crypto_hash.o crypto/ahash.o crypto/shash.o 
+cmd_crypto/crypto_hash.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o crypto/crypto_hash.o crypto/ahash.o crypto/shash.o 

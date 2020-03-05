@@ -1,1 +1,1 @@
-cmd_drivers/power/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/power/built-in.o drivers/power/power_supply.o drivers/power/imx6_usb_charger.o 
+cmd_drivers/power/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/power/built-in.o drivers/power/power_supply.o drivers/power/imx6_usb_charger.o 

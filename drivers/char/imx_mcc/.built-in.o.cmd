@@ -1,1 +1,1 @@
-cmd_drivers/char/imx_mcc/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/char/imx_mcc/built-in.o drivers/char/imx_mcc/imx_sema4.o drivers/char/imx_mcc/imx_mcc_test.o 
+cmd_drivers/char/imx_mcc/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/char/imx_mcc/built-in.o drivers/char/imx_mcc/imx_sema4.o drivers/char/imx_mcc/imx_mcc_test.o 

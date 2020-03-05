@@ -1,1 +1,1 @@
-cmd_drivers/crypto/caam/caam_jr.o := arm-eabi-ld -EL    -r -o drivers/crypto/caam/caam_jr.o drivers/crypto/caam/jr.o drivers/crypto/caam/key_gen.o drivers/crypto/caam/error.o 
+cmd_drivers/crypto/caam/caam_jr.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/crypto/caam/caam_jr.o drivers/crypto/caam/jr.o drivers/crypto/caam/key_gen.o drivers/crypto/caam/error.o 
