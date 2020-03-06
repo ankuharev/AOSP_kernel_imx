@@ -146,18 +146,19 @@
 			//debounce-interval = <1>;
 		};
 
-		button@1 {
+		/*button@1 {
 			label = "wakeup";
 			linux,code = <0x100>;
 			gpios = <&gpio4 29 0x4>;
 			debounce-interval = <20>;
 			gpio-key,wakeup = <1>;
-		};
+		};*/
 	};
 
 	iwg15_backlight {
 		compatible = "iwave,iwg15-backlight";
-		backlgt-gpios = <&gpio2 5 1>;
+		//backlgt-gpios = <&gpio2 5 1>;
+		backlgt-gpios = <&gpio4 29 1>;
 		poweron-gpios = <&gpio2 4 1>;
 		status = "okay";
 	};
@@ -178,9 +179,9 @@
 		compatible = "gpio-leds";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_led_2>;
-		led-gpios = <&gpio5 12 0
+		led-gpios = <&gpio5 12 1
 			&gpio5 13 0
-			&gpio5 14 0
+			&gpio5 14 1
 			&gpio5 15 0  >;
 		status = "okay";
 	};
