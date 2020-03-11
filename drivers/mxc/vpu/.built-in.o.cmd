@@ -1,1 +1,1 @@
-cmd_drivers/mxc/vpu/built-in.o :=  /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/mxc/vpu/built-in.o drivers/mxc/vpu/mxc_vpu.o 
+cmd_drivers/mxc/vpu/built-in.o :=  arm-eabi-ld -EL    -r -o drivers/mxc/vpu/built-in.o drivers/mxc/vpu/mxc_vpu.o 

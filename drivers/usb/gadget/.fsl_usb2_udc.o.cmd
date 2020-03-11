@@ -1,1 +1,1 @@
-cmd_drivers/usb/gadget/fsl_usb2_udc.o := /home/osboxes/AOSP/prebuilts/gcc/linux-x86/arm/arm-eabi-4.6/bin/arm-eabi-ld -EL    -r -o drivers/usb/gadget/fsl_usb2_udc.o drivers/usb/gadget/fsl_udc_core.o drivers/usb/gadget/fsl_mxc_udc.o 
+cmd_drivers/usb/gadget/fsl_usb2_udc.o := arm-eabi-ld -EL    -r -o drivers/usb/gadget/fsl_usb2_udc.o drivers/usb/gadget/fsl_udc_core.o drivers/usb/gadget/fsl_mxc_udc.o 

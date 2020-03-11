@@ -1,1 +1,1 @@
-#define UTS_RELEASE "3.10.53-g242da51-dirty"
+#define UTS_RELEASE "3.10.53-gda7042b-dirty"

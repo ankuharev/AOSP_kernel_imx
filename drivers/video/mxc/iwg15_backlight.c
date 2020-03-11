@@ -160,6 +160,8 @@ static int iwg15_backlight_probe(struct platform_device *pdev)
 	struct imx6_iwg15_backlight *imx6_iwg15_backlight;
 	int ret=0;
 
+	pr_debug("iwg15_backlight_probe: name=%s\n", "---");
+
 	imx6_iwg15_backlight = devm_kzalloc(&pdev->dev, sizeof(*imx6_iwg15_backlight), GFP_KERNEL);
 	if (!imx6_iwg15_backlight)
 		return -ENOMEM;
@@ -174,6 +176,8 @@ static int iwg15_backlight_probe(struct platform_device *pdev)
 		if (ret) {
 			dev_err(&pdev->dev, "unable to get backlight gpio\n");
 			goto err;
+		} else {
+			dev_notice(&pdev->dev, "get backlight gpio\n");
 		}
 	}
 
@@ -186,6 +190,8 @@ static int iwg15_backlight_probe(struct platform_device *pdev)
 		if (ret) {
 			dev_err(&pdev->dev, "unable to get power-on gpio\n");
 			goto err;
+		} else {
+			dev_notice(&pdev->dev, "get power-on gpio\n");
 		}
 	}
 
