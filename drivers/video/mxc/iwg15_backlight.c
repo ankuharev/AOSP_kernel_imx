@@ -39,13 +39,19 @@ struct imx6_iwg15_backlight {
 static int backlight_ctrl_state (struct imx6_iwg15_backlight *iwg15_backlight)
 {
 	int ret;
-        if (gpio_is_valid(iwg15_backlight->backlght_on_gpio))
-                ret = gpio_get_value(iwg15_backlight->backlght_on_gpio);
+
+	pr_debug("iwg15_backlight backlight_ctrl_state: gpio_get_value=%s\n", "state");
+
+	if (gpio_is_valid(iwg15_backlight->backlght_on_gpio))
+			ret = gpio_get_value(iwg15_backlight->backlght_on_gpio);
+
 	return ret;
 }
 
 static void backlight_ctrl (struct imx6_iwg15_backlight *iwg15_backlight, int val)
 {
+	pr_debug("iwg15_backlight backlight_ctrl: gpio_set_value=%s\n", "val");
+
 	if (gpio_is_valid(iwg15_backlight->backlght_on_gpio))
 		gpio_set_value(iwg15_backlight->backlght_on_gpio, val);
 }
@@ -53,14 +59,19 @@ static void backlight_ctrl (struct imx6_iwg15_backlight *iwg15_backlight, int va
 static int power_ctrl_state (struct imx6_iwg15_backlight *iwg15_backlight)
 {
 	int ret;
-        if (gpio_is_valid(iwg15_backlight->power_on_gpio))
-                ret = gpio_get_value(iwg15_backlight->power_on_gpio);
+
+	pr_debug("iwg15_backlight power_ctrl_state: gpio_get_value=%s\n", "state");
+
+	if (gpio_is_valid(iwg15_backlight->power_on_gpio))
+			ret = gpio_get_value(iwg15_backlight->power_on_gpio);
 	return ret;
 
 }
 
 static void power_ctrl (struct imx6_iwg15_backlight *iwg15_backlight, int val)
 {
+	pr_debug("iwg15_backlight power_ctrl: gpio_set_value=%s\n", "val");
+
 	if (gpio_is_valid(iwg15_backlight->power_on_gpio)) 
 		gpio_set_value(iwg15_backlight->power_on_gpio, val);
 
@@ -129,6 +140,8 @@ static int iwg15_backlight_suspend(struct platform_device *pdev, pm_message_t st
 {
 	struct imx6_iwg15_backlight *iwg15_backlight = dev_get_drvdata(&pdev->dev);
 
+	pr_debug("iwg15_backlight_suspend: ctrl=%s\n", "0");
+
 	backlight_ctrl(iwg15_backlight, 0);
 	power_ctrl(iwg15_backlight, 0);
 
@@ -138,6 +151,8 @@ static int iwg15_backlight_suspend(struct platform_device *pdev, pm_message_t st
 static int iwg15_backlight_resume(struct platform_device *pdev)
 {
 	struct imx6_iwg15_backlight *iwg15_backlight = dev_get_drvdata(&pdev->dev);
+
+	pr_debug("iwg15_backlight_resume: ctrl=%s\n", "1");
 
 	backlight_ctrl(iwg15_backlight, 1);
 	power_ctrl(iwg15_backlight, 1);
@@ -202,11 +217,17 @@ static int iwg15_backlight_probe(struct platform_device *pdev)
 	if (ret < 0)
 		dev_warn(&pdev->dev,
 				"cound not create sys node for backlight state\n");
+	else
+		dev_notice(&pdev->dev,
+				"create sys node for backlight state\n");
 
 	ret = device_create_file(&pdev->dev, &dev_attr_pwr_enable);
 	if (ret < 0)
 		dev_warn(&pdev->dev,
 				"cound not create sys node for power state\n");
+	else
+		dev_notice(&pdev->dev,
+				"create sys node for power state\n");
 
 err:
 	return ret;

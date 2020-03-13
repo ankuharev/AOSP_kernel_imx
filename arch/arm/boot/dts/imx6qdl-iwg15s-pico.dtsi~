@@ -107,6 +107,7 @@
 			100
 			>;
 		default-brightness-level = <50>;
+		enable-gpios = <&gpio4 29 0>;
 	};
 
 	v4l2_cap_0 {
@@ -135,9 +136,30 @@
 		status = "okay";
 	};
 
+	gpio-keys {
+		compatible = "gpio-keys";
+		/* Reconfig to power key in Android*/
+		power {
+			label = "Power Button";
+			gpios = <&gpio4 30 1>;
+			linux,code = <116>; /* KEY_POWER */
+			gpio-key,wakeup;
+			//debounce-interval = <1>;
+		};
+
+		/*button@1 {
+			label = "wakeup";
+			linux,code = <0x100>;
+			gpios = <&gpio4 29 0x4>;
+			debounce-interval = <20>;
+			gpio-key,wakeup = <1>;
+		};*/
+	};
+
 	iwg15_backlight {
 		compatible = "iwave,iwg15-backlight";
-		backlgt-gpios = <&gpio2 5 1>;
+		//backlgt-gpios = <&gpio2 5 1>;
+		backlgt-gpios = <&gpio4 29 1>;
 		poweron-gpios = <&gpio2 4 1>;
 		status = "okay";
 	};
@@ -158,9 +180,9 @@
 		compatible = "gpio-leds";
 		pinctrl-names = "default";
 		pinctrl-0 = <&pinctrl_led_2>;
-		led-gpios = <&gpio5 12 0
+		led-gpios = <&gpio5 12 1
 			&gpio5 13 0
-			&gpio5 14 0
+			&gpio5 14 1
 			&gpio5 15 0  >;
 		status = "okay";
 	};
@@ -345,39 +367,20 @@
 	};
 };
 
-&ldb {
+//&ldb { // Enable LDVS LDB 800x480
+&ldb { // Enable LDVS LDB 800x600
 	status = "okay";
-	lvds-channel@0 {
-		fsl,data-mapping = "spwg";
-		fsl,data-width = <18>;
-		//primary;
-                //crtc = "ipu1-di0";
-                crtc = "ipu2-di1";
-		status = "disabled";
-
-		display-timings {
-			native-mode = <&timing0>;
-			timing0: ldb-svga {
-				clock-frequency = <40000000>;
-				hactive = <800>;
-				vactive = <600>;
-				hback-porch = <8>;
-				hfront-porch = <8>;
-				vback-porch = <6>;
-				vfront-porch = <6>;
-				hsync-len = <8>;
-				vsync-len = <6>;
-			};
-		};
-	};
 
 	lvds-channel@1 {
 		fsl,data-mapping = "spwg";
 		fsl,data-width = <18>;
-		primary;
-                //crtc = "ipu2-di1";
-                crtc = "ipu1-di0";
-		status = "okay";
+
+		//primary;   
+		//crtc = "ipu1-di0";
+		//status = "okay";
+
+		crtc = "ipu2-di1";
+		status = "disabled";
 
 		display-timings {
 			native-mode = <&timing1>;
@@ -391,6 +394,33 @@
 				vfront-porch = <10>;
 				hsync-len = <128>;
 				vsync-len = <2>;
+			};
+		};
+	};
+
+	lvds-channel@0 {
+		fsl,data-mapping = "spwg";
+		fsl,data-width = <18>;
+
+		//crtc = "ipu2-di1";
+		//status = "disabled";
+
+		primary;
+		crtc = "ipu1-di0";
+		status = "okay";
+
+		display-timings {
+			native-mode = <&timing0>;
+			timing0: ldb-svga {
+				clock-frequency = <40000000>;
+				hactive = <800>;
+				vactive = <600>;
+				hback-porch = <8>;
+				hfront-porch = <8>;
+				vback-porch = <6>;
+				vfront-porch = <6>;
+				hsync-len = <8>;
+				vsync-len = <6>;
 			};
 		};
 	};

@@ -48,10 +48,14 @@ static void pwm_backlight_power_on(struct pwm_bl_data *pb, int brightness)
 		return;
 
 	if (gpio_is_valid(pb->enable_gpio)) {
-		if (pb->enable_gpio_flags & PWM_BACKLIGHT_GPIO_ACTIVE_LOW)
+		if (pb->enable_gpio_flags & PWM_BACKLIGHT_GPIO_ACTIVE_LOW) {
 			gpio_set_value(pb->enable_gpio, 0);
-		else
+			pr_debug("pwm_backlight_power_on: enable_gpio=%s\n", "0");
+		}
+		else {
 			gpio_set_value(pb->enable_gpio, 1);
+			pr_debug("pwm_backlight_power_on: enable_gpio=%s\n", "1");
+		}
 	}
 
 	pwm_enable(pb->pwm);
@@ -67,10 +71,14 @@ static void pwm_backlight_power_off(struct pwm_bl_data *pb)
 	pwm_disable(pb->pwm);
 
 	if (gpio_is_valid(pb->enable_gpio)) {
-		if (pb->enable_gpio_flags & PWM_BACKLIGHT_GPIO_ACTIVE_LOW)
+		if (pb->enable_gpio_flags & PWM_BACKLIGHT_GPIO_ACTIVE_LOW) {
 			gpio_set_value(pb->enable_gpio, 1);
-		else
+			pr_debug("pwm_backlight_power_off: enable_gpio=%s\n", "1");
+		}
+		else {
 			gpio_set_value(pb->enable_gpio, 0);
+			pr_debug("pwm_backlight_power_off: enable_gpio=%s\n", "0");
+		}
 	}
 
 	pb->enabled = false;
@@ -191,9 +199,17 @@ static int pwm_backlight_parse_dt(struct device *dev,
 						    &flags);
 	if (data->enable_gpio == -EPROBE_DEFER)
 		return -EPROBE_DEFER;
+	else
+		pr_debug("pwm_backlight_parse_dt: of_get_named_gpio_flags=%x\n", data->enable_gpio);
 
-	if (gpio_is_valid(data->enable_gpio) && (flags & OF_GPIO_ACTIVE_LOW))
+	if (gpio_is_valid(data->enable_gpio)) {
+		pr_debug("pwm_backlight_parse_dt: gpio_is_valid=%s\n", "OK");
+	}
+
+	if (gpio_is_valid(data->enable_gpio) && (flags & OF_GPIO_ACTIVE_LOW)) {
 		data->enable_gpio_flags |= PWM_BACKLIGHT_GPIO_ACTIVE_LOW;
+		pr_debug("pwm_backlight_parse_dt: OF_GPIO_ACTIVE_LOW=%s\n", "OK");
+	}
 
 	return 0;
 }
@@ -308,6 +324,7 @@ static int pwm_backlight_probe(struct platform_device *pdev)
 				pb->enable_gpio, ret);
 			goto err_alloc;
 		}
+		dev_dbg(&pdev->dev, "got gpio_is_valid & gpio_request_one for backlight\n");
 	}
 
 	pb->pwm = devm_pwm_get(&pdev->dev, NULL);
@@ -360,8 +377,11 @@ static int pwm_backlight_probe(struct platform_device *pdev)
 	return 0;
 
 err_gpio:
-	if (gpio_is_valid(pb->enable_gpio))
+	dev_dbg(&pdev->dev, "err_gpio\n");
+	if (gpio_is_valid(pb->enable_gpio)) {
 		gpio_free(pb->enable_gpio);
+		dev_dbg(&pdev->dev, "gpio_free\n");
+	}
 err_alloc:
 	if (data->exit)
 		data->exit(&pdev->dev);
@@ -428,3 +448,4 @@ module_platform_driver(pwm_backlight_driver);
 MODULE_DESCRIPTION("PWM based Backlight Driver");
 MODULE_LICENSE("GPL");
 MODULE_ALIAS("platform:pwm-backlight");
+

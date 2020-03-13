@@ -2511,6 +2511,7 @@
    100
    >;
   default-brightness-level = <50>;
+  enable-gpios = <&gpio4 29 1>;
  };
 
  v4l2_cap_0 {
@@ -2549,13 +2550,13 @@
    gpio-key,wakeup;
 
   };
-# 156 "arch/arm/boot/dts/imx6qdl-iwg15s-pico.dtsi"
+# 157 "arch/arm/boot/dts/imx6qdl-iwg15s-pico.dtsi"
  };
 
  iwg15_backlight {
   compatible = "iwave,iwg15-backlight";
+  backlgt-gpios = <&gpio2 5 1>;
 
-  backlgt-gpios = <&gpio4 29 1>;
   poweron-gpios = <&gpio2 4 1>;
   status = "okay";
  };
